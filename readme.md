@@ -2,6 +2,7 @@
 # Bluestock IPO REST API
 
 **Developer:** Apurv Nandgaonkar
+**Email:** apurv.mod007@gmail.com 
 
 This project is a REST API developed for Bluestock Fintech to manage and showcase IPOs (Initial Public Offerings) to users. The application is built using Django and Django Rest Framework, with PostgreSQL (NeonDB) as the database. The admin can perform CRUD operations, while users can access protected endpoints through JWT authentication.
 
@@ -103,5 +104,5 @@ You can use tools like Postman to test the endpoints listed in the features sect
 ## License
 
 This project is licensed under the Bluestock Fintech License.
-
+https://bluestock.in/
 ---
