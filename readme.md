@@ -27,7 +27,7 @@ This project is a REST API developed for Bluestock Fintech to manage and showcas
 - **GET /api/user/ipo/**: Retrieve a list of IPOs available to the user.
 - **GET /api/user/profile/**: Retrieve the profile details of the logged-in user.
 - **POST /api/user/send-reset-password-email/**: Send an email to reset the user's password.
-- **POST /api/user/reset-password/Mg/cap9d3-cdeca75119a04233b2bbc5a5c166ac4f/**: Reset the user's password using a token sent via email.
+- **POST /api/user/reset-password/<uid>/<token>/**: Reset the user's password using a token sent via email.
 
 ## Getting Started
 
