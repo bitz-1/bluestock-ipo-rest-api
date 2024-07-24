@@ -66,14 +66,14 @@ git commit -m "first commit"
    Create a `.env` file in the project root directory and add the following environment variables:
 
    ```
-EMAIL_USER = ''
-EMAIL_PASS = ''
-EMAIL_FROM = ''
-
-PGHOST=''
-PGDATABASE=''
-PGUSER=''
-PGPASSWORD=''
+   EMAIL_USER = ''
+   EMAIL_PASS = ''
+   EMAIL_FROM = ''
+   
+   PGHOST=''
+   PGDATABASE=''
+   PGUSER=''
+   PGPASSWORD=''
 
    ```
 
