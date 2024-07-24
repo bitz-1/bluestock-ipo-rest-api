@@ -1,0 +1,431 @@
+{
+	"info": {
+		"_postman_id": "6f31ffa8-077d-48cc-803d-d6f06e94f4dd",
+		"name": "bluestock-Ipo-rest-api",
+		"description": "---\n\n### Bluestock IPO REST API\n\n**Developed by: Apurv Nandgaonkar**\n\nThis REST API is developed for Bluestock Fintech to manage and display IPOs (Initial Public Offerings) of various stocks. The API provides endpoints for both administrative CRUD operations and user-specific functionalities related to IPOs.\n\n#### **API Endpoints:**\n\n##### **Admin CRUD Operations:**\n\n- **POST /adminCrud/createIpo**: Create a new IPO.\n    \n- **GET /adminCrud/getIpo**: Retrieve details of existing IPOs.\n    \n- **PUT /adminCrud/updateIpo**: Update the details of an existing IPO.\n    \n- **DELETE /adminCrud/deleteIpo**: Delete an existing IPO.\n    \n\n##### **User Operations:**\n\n- **POST /users/register**: Register a new user.\n    \n- **POST /users/login**: Authenticate and login a user.\n    \n- **POST /users/passwordchange**: Change the password of a logged-in user.\n    \n- **GET /users/userGetIpoList**: Retrieve a list of IPOs available to the user.\n    \n- **GET /users/userProfile**: Retrieve the profile details of the logged-in user.\n    \n- **POST /users/sendPasswordResetEmail**: Send an email to reset the user's password.\n    \n- **POST /users/resetPassword**: Reset the user's password using a token sent via email.\n    \n\n#### **Features:**\n\n- **Admin CRUD Operations**: Admins can create, read, update, and delete IPO details.\n    \n- **User Authentication**: Users can register, log in, and manage their account settings.\n    \n- **Password Management**: Users can change their passwords and reset them if forgotten.\n    \n- **IPO Listings**: Both admins and users can retrieve the list of available IPOs, with different levels of access and functionality.\n    \n\nThis API is built using Django Rest Framework, ensuring robust and scalable endpoints for handling IPO-related data efficiently.\n\n---\n\nThis description should provide a clear and concise overview of your REST API project, highlighting its main features and endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33900345"
+	},
+	"item": [
+		{
+			"name": "adminCrud",
+			"item": [
+				{
+					"name": "create Ipo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODgxMjEzLCJpYXQiOjE3MjE4NTM2MTMsImp0aSI6IjhlODg1ZTIzNDBhYTRhNTVhYjdiZWY3YmUyMjQwMjE5IiwidXNlcl9pZCI6M30.FKhHuYuc6rZpuRGa9ayKjFJOd5l2scLCm2q6HPhnJ5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company_logo_path\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6mhkh845syFXoYLPV67smRXn5qHo93yLLXg&s\",\r\n    \"company_name\": \"India bulls Industries pvt\",\r\n    \"price_band\": \"1000\",\r\n    \"open\": \"100\",\r\n    \"close\": \"120\",\r\n    \"issue_size\": \"246,226,515\",\r\n    \"issue_type\": \"NCDs\",\r\n    \"status\": 1,\r\n    \"ipo_price\": \"14000\",\r\n    \"listing_price\": \"15500\",\r\n    \"listing_gain\": \"15%\",\r\n    \"listing_date\": \"19-07-2024\",\r\n    \"cmp\": \"32\",\r\n    \"current_return\": \"10%\",\r\n    \"rhp\": \"https://www.sebi.gov.in/filings/debt-offer-document/jun-2023/indiabulls-housing-finance-limited-tranche-i-prospectus_73369.html\",\r\n    \"drhp\": \"https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/oct-2017/1509088843914.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/administrator/api/v1/ipo-list/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"administrator",
+								"api",
+								"v1",
+								"ipo-list",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get Ipo",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Ipo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODgxMjEzLCJpYXQiOjE3MjE4NTM2MTMsImp0aSI6IjhlODg1ZTIzNDBhYTRhNTVhYjdiZWY3YmUyMjQwMjE5IiwidXNlcl9pZCI6M30.FKhHuYuc6rZpuRGa9ayKjFJOd5l2scLCm2q6HPhnJ5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"company_logo_path\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6mhkh845syFXoYLPV67smRXn5qHo93yLLXg&s\",\r\n    \"company_name\": \"Rajputana Industries pvt\",\r\n    \"price_band\": \"1000\",\r\n    \"open\": \"100\",\r\n    \"close\": \"120\",\r\n    \"issue_size\": \"246,226,515\",\r\n    \"issue_type\": \"NCDs\",\r\n    \"status\": 1,\r\n    \"ipo_price\": \"14000\",\r\n    \"listing_price\": \"15500\",\r\n    \"listing_gain\": \"15%\",\r\n    \"listing_date\": \"19-07-2024\",\r\n    \"cmp\": \"32\",\r\n    \"current_return\": \"10%\",\r\n    \"rhp\": \"https://www.sebi.gov.in/filings/debt-offer-document/jun-2023/indiabulls-housing-finance-limited-tranche-i-prospectus_73369.html\",\r\n    \"drhp\": \"https://www.sebi.gov.in/web/?file=/sebi_data/attachdocs/oct-2017/1509088843914.pdf\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/administrator/api/v1/ipo-list/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"administrator",
+								"api",
+								"v1",
+								"ipo-list",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Ipo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODgxMjEzLCJpYXQiOjE3MjE4NTM2MTMsImp0aSI6IjhlODg1ZTIzNDBhYTRhNTVhYjdiZWY3YmUyMjQwMjE5IiwidXNlcl9pZCI6M30.FKhHuYuc6rZpuRGa9ayKjFJOd5l2scLCm2q6HPhnJ5g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/administrator/api/v1/ipo-list/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"administrator",
+								"api",
+								"v1",
+								"ipo-list",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\" : \"alex@gmail.com\",\r\n  \"name\" : \"Alex\",\r\n  \"password\" :\"issuper123\",\r\n  \"password2\" : \"issuper123\",\r\n  \"tc\" : \"True\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/register/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\" : \"mica@gmail.com\",\r\n\r\n\"password\" :\"issuper123\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "passwordchange",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODYyNjYzLCJpYXQiOjE3MjE4MzUwNjMsImp0aSI6ImRiYTUwYWQ3MmFlMzQ5NDA5OGI3NWJiNWQ1NTI2ODBkIiwidXNlcl9pZCI6NH0.cCKpOL4GcJD50m7LtJZi5Vg_c34wqICJ95Gn8DqPoVY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"password\":\"issuper1234\",\r\n \"password2\":\"issuper1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/changepassword/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"changepassword",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user  get Ipo list",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODgxMTA3LCJpYXQiOjE3MjE4NTM1MDcsImp0aSI6IjhmMmI3NzM0ZTIzNDQxOWE4NTQ4NmJiODhjN2NiNDUyIiwidXNlcl9pZCI6Mn0.I9y7OXFdGZeNw_I1sK3-kfcYjALk-BSF5vgQdAEvXa0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/profile",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sendpasswordresetmail",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODgzMDY1LCJpYXQiOjE3MjE4NTU0NjUsImp0aSI6IjJmYzJhMmI3YWY3ODRiM2Y4Mjg2NThmNzIwNGI2N2JkIiwidXNlcl9pZCI6Mn0.cyJb2pm_5BrM_B019B8aJwoFksw4k3SRvKWsjYqtYLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"email\" : \"mica@gmail.com\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/send-reset-password-email/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"send-reset-password-email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzIxODgzMDY1LCJpYXQiOjE3MjE4NTU0NjUsImp0aSI6IjJmYzJhMmI3YWY3ODRiM2Y4Mjg2NThmNzIwNGI2N2JkIiwidXNlcl9pZCI6Mn0.cyJb2pm_5BrM_B019B8aJwoFksw4k3SRvKWsjYqtYLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"password\":\"issuper1234\",\r\n        \"password2\":\"issuper1234\"\r\n\r\n\r\n       \r\n     \r\n        \r\n        \r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/user/reset-password/Mg/cap9d3-cdeca75119a04233b2bbc5a5c166ac4f/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"reset-password",
+								"Mg",
+								"cap9d3-cdeca75119a04233b2bbc5a5c166ac4f",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
