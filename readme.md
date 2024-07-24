@@ -66,13 +66,15 @@ git commit -m "first commit"
    Create a `.env` file in the project root directory and add the following environment variables:
 
    ```
-   SECRET_KEY=your_secret_key
-   DEBUG=True
-   ALLOWED_HOSTS=127.0.0.1, .localhost
-   DATABASE_URL=postgres://yourusername:yourpassword@yourhost:yourport/yourdbname
-   EMAIL_USER=your_email_user
-   EMAIL_PASS=your_email_password
-   EMAIL_FROM=your_email_from
+EMAIL_USER = ''
+EMAIL_PASS = ''
+EMAIL_FROM = ''
+
+PGHOST=''
+PGDATABASE=''
+PGUSER=''
+PGPASSWORD=''
+
    ```
 
 5. **Run database migrations:**
